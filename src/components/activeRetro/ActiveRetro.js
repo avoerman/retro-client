@@ -9,7 +9,8 @@ class ActiveRetro extends Component {
   state = {
     page: "ANSWER",
     presenter: true,
-    lastQuestion: false
+    lastQuestion: false,
+    sessionName: this.props.match.params.sessionName
   };
 
   handleQuestionAnswered = () => {
