@@ -75,11 +75,7 @@ class Lounge extends Component {
             >
               {({ data, loading }) => (
                 <div>
-                  <JoinCount>
-                    {loading
-                      ? "..."
-                      : `${data.userJoined.joinedUsers.length} participants have joined`}
-                  </JoinCount>
+                  <JoinCount>{loading ? "..." : this.joinedMessage(data)}</JoinCount>
                   {this.state.join && <InvokeMutation joinMutation={joinMutation} />}
                 </div>
               )}
@@ -90,6 +86,12 @@ class Lounge extends Component {
         {this.props.children}
       </CenteredContent>
     );
+  }
+
+  joinedMessage(data) {
+    return data && data.userJoined
+      ? `${data.userJoined.joinedUsers.length} participants have joined`
+      : "Error joining retro.";
   }
 }
 
