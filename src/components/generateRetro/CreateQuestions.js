@@ -12,10 +12,6 @@ const Question = styled.div`
 
 const QuestionHeader = styled.h4``;
 
-const QuestionInput = styled(Input)`
-  width: 100%;
-`;
-
 const QuestionInputContainer = styled.div`
   display: flex;
 `;
@@ -64,7 +60,8 @@ class CreateQuestions extends Component {
           <Question key={index}>
             <QuestionHeader>Question {index + 1}</QuestionHeader>
             <QuestionInputContainer>
-              <QuestionInput
+              <Input
+                style={{ width: "100%" }}
                 type="text"
                 placeholder="Enter question here"
                 value={question.label}
