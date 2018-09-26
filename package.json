@@ -12,6 +12,7 @@
     "apollo-utilities": "^1.0.21",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.9.2",
+    "project-name-generator": "^2.1.5",
     "react": "^16.5.2",
     "react-apollo": "^2.1.11",
     "react-dom": "^16.5.2",

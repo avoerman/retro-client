@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { ButtonSecondary } from "../shared/Buttons";
-import { Input, InputGroup, Label } from "../shared/Forms";
 import styled from "styled-components";
 import CreateQuestions from "./CreateQuestions";
-import { Link } from "react-router-dom";
+import ReadyToStart from "./ReadyToStart";
 
 const Wrapper = styled.div`
   width: 70vw;
@@ -24,7 +22,7 @@ const CreateQuestionsContainer = styled.div`
   padding-right: 1em;
 `;
 
-const ReadyToStart = styled.div`
+const ReadyToStartContainer = styled.div`
   flex: 1;
 `;
 
@@ -33,16 +31,6 @@ const CreateHead = styled.h2`
 `;
 
 class GenerateRetro extends Component {
-  state = {
-    retroName: ""
-  };
-
-  handleOnRetroNameChange = e => {
-    this.setState({
-      retroName: e.target.value
-    });
-  };
-
   render() {
     return (
       <Wrapper>
@@ -51,16 +39,9 @@ class GenerateRetro extends Component {
           <CreateQuestionsContainer>
             <CreateQuestions />
           </CreateQuestionsContainer>
-          <ReadyToStart>
-            <h4>Ready to start?</h4>
-            <InputGroup>
-              <Label htmlFor="retroId">Retro Name</Label>
-              <Input name="retroId" type="text" onChange={this.handleOnRetroNameChange} />
-            </InputGroup>
-            <Link to={/lounge-creator/ + this.state.retroName}>
-              <ButtonSecondary disabled={!this.state.retroName}>Create retro!</ButtonSecondary>
-            </Link>
-          </ReadyToStart>
+          <ReadyToStartContainer>
+            <ReadyToStart />
+          </ReadyToStartContainer>
         </BodyContainer>
       </Wrapper>
     );

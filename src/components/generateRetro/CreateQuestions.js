@@ -31,7 +31,7 @@ class CreateQuestions extends Component {
     questions: [
       { label: "What went well?" },
       { label: "What didn't go well?" },
-      { label: "What should we do differently next time" }
+      { label: "What should we do differently next time?" }
     ]
   };
 
